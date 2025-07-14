@@ -1,0 +1,78 @@
+/* Estilo general del contenedor de login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background-color: #eef4fb;
+    padding: 2rem;
+}
+
+/* Tarjeta de login */
+.login-card {
+    background-color: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-bottom: 0.5rem;
+    color: #2d3e50;
+}
+
+.login-card p {
+    margin-bottom: 1.5rem;
+    color: #6c7a89;
+    font-size: 0.95rem;
+}
+
+/* Formulario */
+#loginForm input {
+    padding: 0.75rem;
+    border: 1px solid #cfd8dc;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+#loginForm input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+/* Botón */
+#loginForm .btn {
+    background-color: #3498db;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#loginForm .btn:hover {
+    background-color: #2980b9;
+}
+
+/* Link de cambio */
+.switch {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.switch a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.switch a:hover {
+    text-decoration: underline;
+}

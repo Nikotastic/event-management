@@ -13,13 +13,6 @@
       "email": "maria@example.com",
       "password": "maria123",
       "rolId": 2
-    },
-    {
-      "id": "0463",
-      "name": "nikol velasquez",
-      "email": "niko123@gmail.com",
-      "password": "niko123",
-      "rolId": 2
     }
   ],
   "roles": [
@@ -34,11 +27,14 @@
   ],
   "events": [
     {
-      "id": "1",
-      "title": "JavaScript course",
-      "description": "Learn JS from scratch",
-      "instructor": "Admin",
-      "students": [
+      "id": "85b4",
+      "title": "Concierto BOgota",
+      "description": "en la clle 2343",
+      "category": "Musical",
+      "maxCapacity": 2000,
+      "instructor": "shakira",
+      "visitors": [
+        "2"
       ]
     }
   ]

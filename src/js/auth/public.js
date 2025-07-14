@@ -13,8 +13,8 @@ export async function publicOnly() {
       // Role-based redirection
       if (role === "admin") {
         location.hash = "/admin";
-      } else if (role === "student") {
-        location.hash = "/students";
+      } else if (role === "visitor") {
+        location.hash = "/visitors";
       } else {
         location.hash = "/";
       }

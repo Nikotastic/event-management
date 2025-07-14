@@ -4,7 +4,8 @@ import { register } from "../views/register";
 import { publicOnly } from "./auth/public";
 import { guardian } from "./auth/guardian";
 import { error } from "../views/not-found";
-
+import { visitors } from "../views/dashvisitors";
+import { admin } from "../views/dashadmin";
 
 export async function router() {
   const route = location.hash.slice(1);
@@ -30,8 +31,8 @@ export async function router() {
       if (await guardian("admin")) admin(app); //  only admin can
       break;
 
-    case "/visitor":
-      if (await guardian("visitor")) visitor(app); //  only visitor can
+    case "/visitors":
+      if (await guardian("visitor")) visitors(app); //  only visitor can
       break; 
 
     default:

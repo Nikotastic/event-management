@@ -1,37 +1,40 @@
-// Function that protects routes according to the expected role
+// Función que protege rutas según el rol esperado
 export async function guardian(expectedRole) {
+  // Recupera al usuario actual desde localStorage
   const user = JSON.parse(localStorage.getItem("currentUser"));
 
-  // If there is no user, redirect to login
+  // Si no hay usuario, redirige a login
   if (!user) {
     alert("No has iniciado sesión");
     location.hash = "/login";
     return false;
   }
 
-  // validations
   try {
+    // Buscar rol en la base de datos
     const res = await fetch(`http://localhost:3000/roles?id=${user.rolId}`);
     const roles = await res.json();
 
-    // rol
+    // Validación del rol
     if (roles.length === 0) {
       alert("Rol no encontrado");
       location.href = "/not-found";
       return false;
     }
 
-    // Check if the role name matches the expected one, if not, access is blocked and sent to not-found
+    // Verifica si el nombre del rol (rolName) coincide con el esperado (expectedRole).
     const rolName = roles[0].rol;
 
+    // Si no, se bloquea el acceso y lo manda a not-found
     if (rolName !== expectedRole) {
       alert("No tienes permiso para acceder a esta sección");
       location.href = "/not-found";
       return false;
     }
 
-    return true; 
-    
+    return true; // Permiso concedido
+
+    //  En caso de error
   } catch (error) {
     console.error("Error en guardian:", error);
     location.href = "/not-found";
