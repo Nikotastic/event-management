@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Admin",
+      "email": "admin@123.com",
+      "password": "admin123",
+      "rolId": 1
+    },
+    {
+      "id": "2",
+      "name": "Maria Paola",
+      "email": "maria@example.com",
+      "password": "maria123",
+      "rolId": 2
+    },
+    {
+      "id": "0463",
+      "name": "nikol velasquez",
+      "email": "niko123@gmail.com",
+      "password": "niko123",
+      "rolId": 2
+    }
+  ],
+  "roles": [
+    {
+      "id": "1",
+      "rol": "admin"
+    },
+    {
+      "id": "2",
+      "rol": "visitor"
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "title": "JavaScript course",
+      "description": "Learn JS from scratch",
+      "instructor": "Admin",
+      "students": [
+      ]
+    }
+  ]
+}
