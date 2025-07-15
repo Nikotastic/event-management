@@ -27,16 +27,16 @@ export function register(container) {
     await handleRegister();
   });
 
+  // MAIN FUNCTION OF THE REGISTER
   async function handleRegister() {
     if ($password.value !== $confirmPass.value) {
       alert("Las contraseñas no coinciden.");
       return;
     }
 
-    // Aseguramos limpieza de datos y codificación
+    // We ensure data cleansing and coding
     const cleanEmail = encodeURIComponent($email.value.trim());
 
-    // Verificamos si el correo ya está registrado
     const res = await fetch(`http://localhost:3000/users?email=${cleanEmail}`);
     const users = await res.json();
 
@@ -45,7 +45,7 @@ export function register(container) {
       return;
     }
 
-    // Crear el nuevo usuario con rol de estudiante por defecto (rolId: 2)
+    // We create the new user with the default student role (rolId: 2)
     const newUser = {
       name: $name.value.trim(),
       email: $email.value.trim(),
@@ -53,7 +53,7 @@ export function register(container) {
       rolId: 2,
     };
 
-    // Enviamos al backend (json-server)
+    // We send to the backend
     const postRes = await fetch("http://localhost:3000/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -65,7 +65,7 @@ export function register(container) {
       return;
     }
 
-    // Guardamos en localStorage y redirigimos
+    // We save in localStorage and redirect
     localStorage.setItem("currentUser", JSON.stringify(newUser));
     alert("Registro exitoso");
     location.hash = "/visitors";

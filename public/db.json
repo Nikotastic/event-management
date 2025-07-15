@@ -10,8 +10,15 @@
     {
       "id": "2",
       "name": "Maria Paola",
-      "email": "maria@example.com",
+      "email": "maria@gmail.com",
       "password": "maria123",
+      "rolId": 2
+    },
+    {
+      "id": "eaac",
+      "name": "mateo",
+      "email": "mateo123@gmail.com",
+      "password": "mateo123",
       "rolId": 2
     }
   ],
@@ -33,6 +40,17 @@
       "category": "Musical",
       "maxCapacity": 2000,
       "instructor": "shakira",
+      "visitors": [
+        "2"
+      ]
+    },
+    {
+      "id": "14a4",
+      "title": "concierto",
+      "description": "concierto",
+      "category": "concierto",
+      "maxCapacity": 1,
+      "instructor": "maluma",
       "visitors": [
         "2"
       ]

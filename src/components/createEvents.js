@@ -26,13 +26,13 @@ export function createEvents(container) {
   $form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Validación  capacidad > 0
+    // Validations: capacity > 0
     if (Number($maxCapacity.value) <= 0) {
       alert("La capacidad debe ser mayor a cero.");
       return;
     }
 
-    //  Validación: título no repetido
+    // Unrepeated title
     const courseRes = await fetch("http://localhost:3000/events");
     const courses = await courseRes.json();
     const exists = courses.some(
@@ -43,8 +43,8 @@ export function createEvents(container) {
       return;
     }
 
-    // Estructura del nuevo curso
-    const newCourse = {
+    // Structure of the new event
+    const newEvent = {
       title: $title.value,
       description: $description.value,
       category: $category.value,
@@ -54,14 +54,14 @@ export function createEvents(container) {
     };
 
     try {
-      //  Envío a la base de datos (json-server)
+      // Sending to the database
       const res = await fetch("http://localhost:3000/events", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newCourse),
+        body: JSON.stringify(newEvent),
       });
 
-      // Manejo de éxito o error
+      // Success or error handling
       if (!res.ok) {
         throw new Error("No se pudo crear el curso");
       }

@@ -1,9 +1,8 @@
-// Importa los módulos que se mostrarán en el panel
 
 import { createEvents } from "../components/createEvents";
 import { renderEvents } from "../components/renderEvents";
 
-
+// Dashboard Admin
 export function admin(app) {
   app.innerHTML = `
     <section class="dashboard">
@@ -23,18 +22,18 @@ export function admin(app) {
 
   const content = document.getElementById("admin-content");
 
-  // Cerrar sesión
+  // Sign out
   document.getElementById("logoutBtn").addEventListener("click", () => {
     localStorage.removeItem("currentUser");
     location.hash = "/";
   });
 
-  // Eventos para los botones
+  // Events for buttons
   document
     .getElementById("createCourseBtn")
     .addEventListener("click", () => createEvents(content));
 
-    document
-      .getElementById("viewCoursesBtn")
-      .addEventListener("click", () => renderEvents(content));
+  document
+    .getElementById("viewCoursesBtn")
+    .addEventListener("click", () => renderEvents(content));
 }

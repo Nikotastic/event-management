@@ -14,21 +14,19 @@ export function login(container) {
     </section>
   `;
 
-  // Captura elementos del formulario
+  // Capture form elements and send it
   const $form = document.getElementById("loginForm");
   const $email = document.getElementById("email");
   const $password = document.getElementById("password");
 
-  // Evento de envío del formulario
   $form.addEventListener("submit", async (event) => {
     event.preventDefault();
     await loginUser();
   });
 
-  // Función principal del login
+  // Main function of login
   async function loginUser() {
     try {
-      // Buscar usuario por email
       const res = await fetch(
         `http://localhost:3000/users?email=${$email.value}`
       );
@@ -41,13 +39,12 @@ export function login(container) {
 
       const user = users[0];
 
-      // Validar contraseña
       if (user.password !== $password.value) {
         alert("Contraseña incorrecta");
         return;
       }
 
-      // Buscar rol del usuario (convertimos rolId a número por seguridad)
+      // Search for user role
       console.log("ROL ID:", user.rolId);
       const roleRes = await fetch(
         `http://localhost:3000/roles?id=${user.rolId}`
@@ -62,10 +59,10 @@ export function login(container) {
 
       const role = roles[0].rol;
 
-      // Guardar usuario en localStorage
+      // Save user to localStorage
       localStorage.setItem("currentUser", JSON.stringify(user));
 
-      // Redirigir según el rol
+      // Redirect based on role
       if (role === "admin") {
         location.hash = "/admin";
       } else if (role === "visitor") {

@@ -3,7 +3,7 @@ import { login } from "../views/login";
 import { register } from "../views/register";
 import { publicOnly } from "./auth/public";
 import { guardian } from "./auth/guardian";
-import { error } from "../views/not-found";
+import { error } from "../views/notFound";
 import { visitors } from "../views/dashvisitors";
 import { admin } from "../views/dashadmin";
 

@@ -1,5 +1,5 @@
-// Importa funciones necesarias
-import { renderAvailableEvents } from "../components/renderAvailableEvents.JS";
+// dashboard Visitiors
+import { renderAvailableEvents } from "../components/renderAvailableEvents.js";
 import { renderMyEvents } from "../components/renderMyEvents";
 
 export function visitors(app) {
@@ -24,7 +24,7 @@ export function visitors(app) {
 
   const content = document.getElementById("student-content");
 
-  // Eventos
+  // Events for buttons
   document.getElementById("logoutBtn").addEventListener("click", () => {
     localStorage.removeItem("currentUser");
     location.hash = "/";
@@ -34,7 +34,7 @@ export function visitors(app) {
     renderAvailableEvents(content, userId);
   });
 
-   document.getElementById("btn-my-courses").addEventListener("click", () => {
+  document.getElementById("btn-my-courses").addEventListener("click", () => {
     renderMyEvents(content, userId);
-  }); 
+  });
 }

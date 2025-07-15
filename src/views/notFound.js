@@ -1,3 +1,5 @@
+// NOT FOUND
+
 export function error(container) {
   container.innerHTML = `
     <section class="center">

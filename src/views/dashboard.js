@@ -1,3 +1,4 @@
+// Dashboard main
 export function dashboard(container) {
   container.innerHTML = `
     <section class="landing">
